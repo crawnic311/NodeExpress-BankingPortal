@@ -34,7 +34,7 @@ app.post('/payment', (req, res) => {
     res.render('payment', {message: "Payment Succesfful", account: accounts.credit})
 })
 
-app.get('/transfer', (req, res) => res.render('transfer', {transfer: transfer}))
+app.get('/transfer', (req, res) => res.render('transfer'))
 app.post('/transfer', (req, res) => {
     accounts[req.body.from].balance = accounts[req.body.from].balance - req.body.amount
     accounts[req.body.to].balance = parseInt(accounts[req.body.to].balance) + parseInt(req.body.amount, 10)
